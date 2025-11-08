@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismet Ozer | Developer Portfolio</title>
+    
+    <!-- Load Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Background image styles */
+            background-image: url('images/home.jpg'); /* REPLACE WITH YOUR IMAGE URL */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            @apply text-gray-100;
+            position: relative;
+        }
+        /* Overlay to darken background and improve text readability */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(17, 24, 39, 0.85); /* Dark overlay matching existing dark theme */
+            z-index: -1;
+        }
+        
+        .nav-link {
+            @apply inline-block transition duration-300; /* Added for better transform behavior */
+        }
+        .nav-link:hover {
+            @apply text-indigo-300 font-bold scale-110; /* Added bold and scale effect */
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            @apply bg-gray-700;
+            transform: translateX(-50%);
+        }
+
+        /* Adjust header/footer background for contrast with new body background */
+        header, footer {
+            @apply bg-gray-900/90;
+        }
+        main section {
+            @apply bg-gray-900/70 rounded-lg p-8 mb-16; /* Add background to sections for readability */
+        }
+        .hero-section-content {
+            @apply bg-gray-900/70 rounded-lg p-10; /* Apply similar background to hero content */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+<header class="sticky top-0 z-50 backdrop-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                
+                <a href="#hero" class="text-xl font-bold text-indigo-300 hover:text-indigo-200 transition duration-300">Ismet Ozer</a>
+                
+                <nav class="flex space-x-4 md:space-x-6">
+                    <a href="#about" class="nav-link text-xs sm:text-sm font-medium text-gray-200 hover:font-bold hover:text-sm sm:hover:text-base transition-all duration-300">About Me</a>
+                    <a href="#cv" class="nav-link text-xs sm:text-sm font-medium text-gray-200 hover:font-bold hover:text-sm sm:hover:text-base transition-all duration-300">Experience</a>
+                    <a href="#education" class="nav-link text-xs sm:text-sm font-medium text-gray-200 hover:font-bold hover:text-sm sm:hover:text-base transition-all duration-300">Education</a>
+                    <a href="#business-solving" class="nav-link text-xs sm:text-sm font-medium text-gray-200 hover:font-bold hover:text-sm sm:hover:text-base transition-all duration-300">Problem Solving</a>
+                    <a href="#personal" class="nav-link text-xs sm:text-sm font-medium text-gray-200 hover:font-bold hover:text-sm sm:hover:text-base transition-all duration-300">Personal</a>
+                    <a href="#contact" class="nav-link text-xs sm:text-sm font-medium text-gray-200 hover:font-bold hover:text-sm sm:hover:text-base transition-all duration-300">Contact</a>
+                </nav>
+                
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+  <!-- Hero Section -->
+<section id="hero" class="min-h-[calc(100vh-4rem)] flex flex-col justify-center text-center lg:text-left pt-10 pb-20">
+    <div class="hero-section-content">
+      <p class="text-1xl sm:text-2xl lg:text-3xl text-indigo-300 font-semibold mb-3">
+        Have we <strong>met</strong>, I'm Is<strong>met</strong>?
+      </p>
+  
+      <!-- Main Name -->
+      <h1 class="text-6xl sm:text-8xl lg:text-[10rem] font-extrabold tracking-tight text-white mb-4 drop-shadow-lg">
+        Ismet Ozer
+      </h1>
+  
+      <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-400 mb-8">
+        Passionate about tackling problems that challenge the mind and strengthen community connections!
+      </h2>
+  
+      <!-- Call to Action -->
+      <div class="flex flex-col items-center lg:items-start space-y-6">
+        
+        <!-- Social Icons (moved above button) -->
+        <div class="flex space-x-6 text-gray-400">
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/ismet-ozer"
+            target="_blank"
+            class="hover:text-indigo-400 transition transform hover:scale-110"
+            aria-label="LinkedIn"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19.3H5.3V9.6h3v9.7zM6.8 8.2c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm12.5 11.1h-3v-5.1c0-1.2 0-2.7-1.6-2.7-1.6 0-1.8 1.3-1.8 2.6v5.1h-3V9.6h2.9v1.3h.1c.4-.8 1.3-1.6 2.7-1.6 2.9 0 3.5 1.9 3.5 4.3v5.7z"
+              />
+            </svg>
+          </a>
+  
+          <!-- Email -->
+          <a
+            href="mailto:ismet.ozer.21@outlook.com"
+            class="hover:text-indigo-400 transition transform hover:scale-110"
+            aria-label="Email"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8.24l8 6.99 8-6.99V18H4z"
+              />
+            </svg>
+          </a>
+        </div>
+  
+        <!-- Button (moved below icons) -->
+        <a
+          href="#about"
+          class="group px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-500 transition duration-300 transform hover:scale-105 inline-flex items-center"
+        >
+          More About Me
+          <span class="ml-2 inline-block transition-transform duration-500 ease-in-out group-hover:translate-y-1">
+            &#x2193;
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+        
+
+        <section id="about" class="py-20 border-t border-gray-800">
+            <h3 class="text-4xl font-bold mb-12 text-center text-white">
+              <span class="text-indigo-300">01.</span> About Me
+            </h3>
+          
+            <div class="grid lg:grid-cols-3 gap-12 items-center max-w-6xl mx-auto px-6">
+              <!-- Text Column (2/3 width) -->
+              <div class="lg:col-span-2 flex flex-col justify-center space-y-6">
+                <p class="text-gray-300 leading-relaxed">
+                  I'm Ismet, an individual who enjoys solving problems to create meaningful impact on communities. I grew up in Hong Kong to Turkish parents. As a result, I've always enjoyed using my cross-cultural upbringing and experiences when finding solutions to challenges. I also like integrating my sports background into the way I think and collaborate with other talented individuals.
+                </p>
+          
+                <p class="text-gray-300 leading-relaxed">
+                  Whether analyzing complex market data for investment decisions, designing GTM strategies, or building predictive models, I focus on delivering actionable insights that translate directly into ROI and operational efficiency.
+                </p>
+          
+                <div class="mt-6">
+                  <!-- Technical Skills -->
+                  <p class="text-gray-300 font-semibold mb-2">Key Quantitative & Technical Skills:</p>
+                  <ul class="list-disc list-outside ml-6 grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 text-sm text-gray-400">
+                    <li>Python (Data Analysis, AI)</li>
+                    <li>R (Statistical Modeling)</li>
+                    <li>SQL / Data Structuring</li>
+                    <li>Excel Modeling (VBA)</li>
+                    <li>Forecasting & Risk Analysis</li>
+                    <li>C / C++ / Java / Git</li>
+                  </ul>
+          
+                  <!-- Soft Skills -->
+                  <p class="text-gray-300 font-semibold mt-6 mb-2">Core Soft & Professional Skills:</p>
+                  <ul class="list-disc list-outside ml-6 grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 text-sm text-gray-400">
+                    <li>Presentation & Public Speaking</li>
+                    <li>Client Communication</li>
+                    <li>Analytical Thinking</li>
+                    <li>Leadership & Team Collaboration</li>
+                    <li>Strategic Problem Solving</li>
+                    <li>Adaptability & Cross-Cultural Agility</li>
+                  </ul>
+                </div>
+              </div>
+          
+              <!-- Profile Photo Column (1/3 width) -->
+              <div class="flex justify-center lg:justify-end">
+                <div class="w-80 h-80 bg-gray-800 rounded-full shadow-2xl relative group overflow-hidden">
+                  <img
+                    src="images/Ismet_Ozer.JPEG"
+                    alt="Ismet Ozer"
+                    class="w-full h-full object-cover rounded-full transition duration-500 ease-in-out group-hover:opacity-80"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          
+        
+
+<!-- Professional Experience Section -->
+<section id="cv" class="py-20 border-t border-gray-800 relative">
+    <h3 class="text-4xl font-bold mb-12 text-center text-white">
+        <span class="text-indigo-300">02.</span> Professional Experience
+    </h3>
+
+    <div class="max-w-3xl mx-auto relative pt-8 pb-10">
+        <!-- Vertical timeline line -->
+        <div class="absolute left-1/2 top-0 transform -translate-x-1/2 h-full w-0.5 bg-gray-600 hidden sm:block"></div>
+
+        <!-- 1. IQVIA -->
+        <div class="grid sm:grid-cols-2 items-center gap-6 mb-12 relative group">
+            <div class="sm:absolute sm:left-1/2 sm:top-0 h-4 w-4 rounded-full bg-indigo-600 ring-4 ring-gray-900 border-2 border-indigo-300 sm:-ml-2.5 transition-all duration-300 group-hover:scale-125 group-hover:bg-indigo-300"></div>
+
+            <div class="text-right sm:pr-8 transition-all duration-300 group-hover:scale-105 group-hover:text-indigo-300">
+                <p class="text-lg font-semibold text-indigo-300 group-hover:text-indigo-200">Strategy Life Sciences Consulting Analyst</p>
+                <p class="text-gray-200">IQVIA</p>
+                <p class="text-sm text-gray-300 mt-1">Nov 2024 – Sep 2025 | Singapore</p>
+            </div>
+
+            <div class="sm:pl-8 pt-4 sm:pt-0 transition-all duration-300 group-hover:bg-gray-800/40 group-hover:rounded-lg group-hover:p-4">
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Designed LoE defence strategies for global pharma across 10+ markets, driving GTM execution and protecting market share in Turkey. Built VBA and ML models to forecast therapeutic market sizes and inform multi-million-dollar investment decisions.
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. Bain & Company -->
+        <div class="grid sm:grid-cols-2 items-center gap-6 mb-12 relative group">
+            <div class="sm:absolute sm:left-1/2 sm:top-0 h-4 w-4 rounded-full bg-indigo-600 ring-4 ring-gray-900 border-2 border-indigo-300 sm:-ml-2.5 transition-all duration-300 group-hover:scale-125 group-hover:bg-indigo-300"></div>
+
+            <div class="text-left sm:pl-8 order-2 sm:order-1 pt-4 sm:pt-0 transition-all duration-300 group-hover:bg-gray-800/40 group-hover:rounded-lg group-hover:p-4">
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Developed operational and market entry strategies across APAC/EMEA, enabling $1.5B investment decisions. Analysed decarbonization risks and shaped long-term sustainability roadmaps for major Turkish industries.
+                </p>
+            </div>
+
+            <div class="text-right sm:pr-8 order-1 sm:order-2 transition-all duration-300 group-hover:scale-105 group-hover:text-indigo-300">
+                <p class="text-lg font-semibold text-indigo-300 group-hover:text-indigo-200">Associate Consultant Intern</p>
+                <p class="text-gray-200">Bain & Company</p>
+                <p class="text-sm text-gray-300 mt-1">Jul 2023 – Aug 2023 | Istanbul, Turkey</p>
+            </div>
+        </div>
+
+        <!-- 3. AlphaSights -->
+        <div class="grid sm:grid-cols-2 items-center gap-6 mb-12 relative group">
+            <div class="sm:absolute sm:left-1/2 sm:top-0 h-4 w-4 rounded-full bg-indigo-600 ring-4 ring-gray-900 border-2 border-indigo-300 sm:-ml-2.5 transition-all duration-300 group-hover:scale-125 group-hover:bg-indigo-300"></div>
+
+            <div class="text-right sm:pr-8 transition-all duration-300 group-hover:scale-105 group-hover:text-indigo-300">
+                <p class="text-lg font-semibold text-indigo-300 group-hover:text-indigo-200">Summer Associate, Private Equity Client Service</p>
+                <p class="text-gray-200">AlphaSights</p>
+                <p class="text-sm text-gray-300 mt-1">Jun 2022 – Aug 2022 | Hong Kong</p>
+            </div>
+
+            <div class="sm:pl-8 pt-4 sm:pt-0 transition-all duration-300 group-hover:bg-gray-800/40 group-hover:rounded-lg group-hover:p-4">
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Coordinated expert placements for Private Equity clients, driving high-impact investment decisions and accelerating cross-border project delivery. Exceeded revenue targets by 60% through proactive client engagement.
+                </p>
+            </div>
+        </div>
+
+        <!-- 4. Locus Ventures -->
+        <div class="grid sm:grid-cols-2 items-center gap-6 relative group">
+            <div class="sm:absolute sm:left-1/2 sm:top-0 h-4 w-4 rounded-full bg-indigo-600 ring-4 ring-gray-900 border-2 border-indigo-300 sm:-ml-2.5 transition-all duration-300 group-hover:scale-125 group-hover:bg-indigo-300"></div>
+
+            <div class="text-left sm:pl-8 order-2 sm:order-1 pt-4 sm:pt-0 transition-all duration-300 group-hover:bg-gray-800/40 group-hover:rounded-lg group-hover:p-4">
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Conducted due diligence on 700+ YC start-ups, evaluating trends, competitive positioning, and growth potential to support early-stage investment decisions. Expanded research coverage to 400+ additional start-ups.
+                </p>
+            </div>
+
+            <div class="text-right sm:pr-8 order-1 sm:order-2 transition-all duration-300 group-hover:scale-105 group-hover:text-indigo-300">
+                <p class="text-lg font-semibold text-indigo-300 group-hover:text-indigo-200">Investment Analyst Intern</p>
+                <p class="text-gray-200">Locus Ventures</p>
+                <p class="text-sm text-gray-300 mt-1">Dec 2021 – Jun 2022 | California, USA (Remote)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Education Section (Separate Timeline with Spotlight) -->
+<section id="education" class="py-20 border-t border-gray-800 relative">
+    <h3 class="text-4xl font-bold mb-12 text-center text-white">
+        <span class="text-indigo-300">03.</span> Education
+    </h3>
+
+    <div class="max-w-3xl mx-auto relative pt-8 pb-10">
+        <!-- Vertical timeline line -->
+        <div class="absolute left-1/2 top-0 transform -translate-x-1/2 h-full w-0.5 bg-gray-600 hidden sm:block"></div>
+
+        <!-- HKUST Entry -->
+        <div class="grid sm:grid-cols-2 items-start gap-6 relative group">
+            <!-- Timeline Node -->
+            <div class="sm:absolute sm:left-1/2 sm:top-4 h-4 w-4 rounded-full bg-indigo-600 ring-4 ring-gray-900 border-2 border-indigo-300 sm:-ml-2.5 transition-all duration-300 group-hover:scale-150 group-hover:bg-indigo-300 group-hover:ring-indigo-300"></div>
+
+            <!-- Left Content -->
+            <div class="text-right sm:pr-8 transition-all duration-300 group-hover:scale-105 group-hover:text-indigo-200">
+                <p class="text-lg font-semibold text-indigo-300 group-hover:text-indigo-200">
+                    Bachelor in Business Administration (BBA) in Global Business & Finance & Bachelor in Science (BSc) in Computer Science
+                </p>
+                <p class="text-gray-200 group-hover:text-gray-100">The Hong Kong University of Science & Technology</p>
+                <p class="text-sm text-gray-300 mt-1 group-hover:text-gray-300">Aug 2020 – Jul 2024 | Hong Kong</p>
+            </div>
+
+            <!-- Right Description -->
+            <!-- Right Description -->
+            <div class="sm:pl-8 pt-4 sm:pt-0 transition-all duration-300 group-hover:bg-gray-800/60 group-hover:rounded-lg group-hover:p-5 group-hover:shadow-2xl">
+            <div class="mt-2">
+            <strong class="text-gray-200">Select Academic and Leadership Awards:</strong>
+                <ul class="list-disc list-outside ml-6 mt-2 space-y-1 text-gray-300 text-sm leading-relaxed">
+                <li>AS Watson Scholarship ($20,000)</li>
+                <li>HSBC Hong Kong Scholarship ($50,000)</li>
+                <li>Sir Edward Youde Memorial Scholarship ($40,000)</li>
+                <li>Tin Ka Ping Innovation & Creativity Scholarship ($30,000)</li>
+                <li>Tin Ka Ping Community Leadership Scholarship ($50,000)</li>      
+                </ul>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+</div>
+
+    </div>
+
+    <!-- Download CV Button -->
+    <div class="text-center mt-12">
+        <a href="Ismet_CV.pdf" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="px-6 py-3 bg-gray-700 text-gray-200 font-semibold rounded-lg shadow hover:bg-gray-600 transition duration-300">
+            Download Full CV (PDF)
+        </a>
+    </div>
+</section>
+
+
+ <!-- Business Problem Solving Section -->
+<section id="business-solving" class="py-20 border-t border-gray-800">
+    <h3 class="text-4xl font-bold mb-6 text-center text-white">
+        <span class="text-indigo-300">04.</span> Business Problem Solving
+    </h3>
+
+    <!-- Introductory Text -->
+    <p class="text-gray-400 text-center mb-12 max-w-3xl mx-auto leading-relaxed">
+        I’ve had the privilege of working on a multitude of business problems beyond the classroom, gaining hands-on experience across industries. The projects highlighted below are some that have been recognized in press releases and competitions.
+    </p>
+
+    <!-- Project Cards -->
+    <div class="space-y-10">
+        <!-- Project 1 -->
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:scale-[1.02]">
+            <h4 class="text-2xl font-semibold text-white mb-2">
+                Tata Steel Netherlands x Microsoft Collaboration for Sustainable Steel Production
+            </h4>
+            <p class="text-indigo-300 mb-4 text-sm">
+                Strategic Thinking, Data Modeling, Cross-functional Communication
+            </p>
+            <p class="text-gray-300 mb-4">
+                Designed a high-level solution leveraging Microsoft's technology to aid with Tata Steel's 2045 carbon transition, focusing on planning, building, and deployment. Ranked 1st globally in the International RSM Star Case Competition.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://bm.hkust.edu.hk/news/2024/06/clean-sweep" 
+                   class="text-indigo-300 hover:text-indigo-300 font-medium text-sm transition duration-300 inline-flex items-center gap-1" 
+                   target="_blank">
+                    <span class="transition-transform duration-300 group-hover:scale-110">📢</span>
+                    View News Announcement
+                </a>
+                <a href="Pixel_Consulting_1.pdf" 
+                   class="text-indigo-300 hover:text-indigo-300 font-medium text-sm transition duration-300 inline-flex items-center gap-1" 
+                   target="_blank">
+                    <span class="transition-transform duration-300 group-hover:scale-110">🧠</span>
+                    View Solution
+                </a>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:scale-[1.02]">
+            <h4 class="text-2xl font-semibold text-white mb-2">
+                Redress Hong Kong Strategic Restructuring to Drive Sustainable Income and Impact
+            </h4>
+            <p class="text-indigo-300 mb-4 text-sm">
+                Financial Analysis, Process Optimization, Stakeholder Management
+            </p>
+            <p class="text-gray-300 mb-4">
+                Examined and formalized how a local NGO in Hong Kong can leverage its limited resources to create channels of sustainable income to expand its impact reach. Ranked 1st Runner up in the HSBC Case Competition.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://bm.hkust.edu.hk/news/2022/04/undergraduate-students-notch-first-runner-hsbchku-business-case-competition-2022-hong" 
+                   class="text-indigo-300 hover:text-indigo-300 font-medium text-sm transition duration-300 inline-flex items-center gap-1" 
+                   target="_blank">
+                    <span class="transition-transform duration-300 group-hover:scale-110">📢</span>
+                    View News Announcement
+                </a>
+                <a href="Redress.pdf" 
+                   class="text-indigo-300 hover:text-indigo-300 font-medium text-sm transition duration-300 inline-flex items-center gap-1" 
+                   target="_blank">
+                    <span class="transition-transform duration-300 group-hover:scale-110">🧠</span>
+                    View Solution
+                </a>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-500 hover:scale-[1.02]">
+            <h4 class="text-2xl font-semibold text-white mb-2">
+                Sustainability Strategy for 22 ESF Schools Across Hong Kong
+            </h4>
+            <p class="text-indigo-300 mb-4 text-sm">
+                Project Management, Policy Analysis, Collaboration & Facilitation
+            </p>
+            <p class="text-gray-300 mb-4">
+                Initiated and outlined a 5-10 year sustainability strategy to be implemented across 22 schools in Hong Kong. Plan has been ratified and executed across all schools to further combine sustainable development and thinking for future generations in education.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://www.esf.edu.hk/sustainability-strategy/" 
+                   class="text-indigo-300 hover:text-indigo-300 font-medium text-sm transition duration-300 inline-flex items-center gap-1" 
+                   target="_blank">
+                    <span class="transition-transform duration-300 group-hover:scale-110">📢</span>
+                    View News Announcement
+                </a>
+                <a href="The English Schools Foundation’s Sustainability Strategy.pdf.pdf" 
+                   class="text-indigo-300 hover:text-indigo-300 font-medium text-sm transition duration-300 inline-flex items-center gap-1" 
+                   target="_blank">
+                    <span class="transition-transform duration-300 group-hover:scale-110">🧠</span>
+                    View Solution
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+        <!-- Personal Section -->
+        <section id="personal" class="py-20 border-t border-gray-800">
+            <h3 class="text-4xl font-bold mb-12 text-center text-white">
+                <span class="text-indigo-300">04.</span> Personal Interests
+            </h3>
+            <p class="max-w-3xl mx-auto text-center text-gray-300 text-lg mb-10">
+                Beyond my professional work, I believe diverse interests fuel creativity and lead to better problem-solving. Here's a glimpse into what keeps me inspired outside of work.
+            </p>
+        
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Football -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border-t-4 border-indigo-500 transform transition duration-500 hover:scale-105 hover:bg-gray-700 hover:shadow-2xl hover:border-indigo-300">
+                    <h4 class="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                        <span class="text-2xl transition-transform duration-300 group-hover:scale-125">⚽</span> Football
+                    </h4>
+                    <p class="text-gray-400 text-sm">
+                        Growing up with football has provided an avenue of joy, adrenaline, and relaxation. Whether it be committing 4 days a week to my youth career across the HKFA youth leagues and as captain of my high school team in Div 1 in Hong Kong, or even being a referee for the HKFA, I love every part of it – even the responses from VAR. I'm well in touch with what's going on across the football world and always enjoy a small conversation about anything related.
+                    </p>
+                </div>
+        
+                <!-- Chess -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border-t-4 border-indigo-500 transform transition duration-500 hover:scale-105 hover:bg-gray-700 hover:shadow-2xl hover:border-indigo-300">
+                    <h4 class="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                        <span class="text-2xl transition-transform duration-300 group-hover:scale-125">♘</span> Chess
+                    </h4>
+                    
+                    <p class="text-gray-400 text-sm">
+                        Chess is a beautiful game I've had the opportunity to learn and grow up with. I learned many things through my time playing chess, but the one lesson I learned better than any is probably patience. Whilst I may not play as competitively as I used to in face-to-face tournaments, I am active on Chess.com (@ismetrockz) and always love a good game. I am 1800 on rapid as we continue to push for 2000! (Update: we hit 1900!)
+                    </p>
+                </div>
+        
+                <!-- Community Involvement -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border-t-4 border-indigo-500 transform transition duration-500 hover:scale-105 hover:bg-gray-700 hover:shadow-2xl hover:border-indigo-300">
+                    <h4 class="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                        <span class="text-2xl transition-transform duration-300 group-hover:scale-125">🤝</span> Community Involvement
+                    </h4>
+                    <p class="text-gray-400 text-sm">
+                        I have always valued giving back to the communities that shaped me. During the pandemic, I contributed on the frontlines as a Deliveroo rider in Hong Kong. I shared my business problem-solving skills as Head of the Case Analysis Team and led creative consulting projects as President of 180 Degrees Consulting, supporting NGOs with constrained resources.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 border-t border-gray-800 text-center">
+            <div class="max-w-2xl mx-auto">
+              <h3 class="text-4xl font-bold mb-6 text-white">
+                <span class="text-indigo-300">05.</span> Get In Touch
+              </h3>
+              <p class="text-gray-300 text-lg mb-8">
+                Interested in discussing potential opportunities or learning more about my experience?<br>
+                I’m always open to connecting with teams where I can create meaningful impact through strategy, data, and innovation.
+              </p>
+              <a
+                href="mailto:ismet.ozer.21@outlook.com"
+                class="px-8 py-4 bg-transparent border-2 border-indigo-600 text-indigo-300 font-semibold rounded-lg hover:bg-indigo-600 hover:text-white transition duration-300 transform hover:shadow-xl inline-block"
+              >
+                Get In Touch
+              </a>
+            </div>
+          </section>
+          
+
+    </main>
+
+    <!-- Footer -->
+<footer class="text-center py-8 border-t border-gray-800">
+        <p class="text-sm text-gray-500">
+            Designed & Built by Ismet Ozer (2024)
+        </p>
+    </footer>
+
+    <!-- JavaScript for Smooth Scrolling -->
+<script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); 
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
