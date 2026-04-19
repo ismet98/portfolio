@@ -551,5 +551,123 @@
             });
         });
     </script>
+
+    <!-- JavaScript for Smooth Scrolling -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); 
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+
+    <!-- =============================== -->
+    <!-- AI CHATBOT START -->
+    <!-- =============================== -->
+
+    <div class="fixed bottom-6 right-6 z-50">
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" 
+            class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-full shadow-lg">
+            🤖 Ask AI
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chatbot-window" 
+            class="hidden mt-3 w-80 bg-gray-900 border border-gray-700 rounded-xl shadow-2xl flex flex-col overflow-hidden">
+
+            <!-- Header -->
+            <div class="bg-indigo-600 text-white p-3 flex justify-between items-center">
+                <span>AI Recruiter Assistant</span>
+                <button onclick="toggleChat()">✕</button>
+            </div>
+
+            <!-- Quick Action -->
+            <div class="p-2 border-b border-gray-700">
+                <button onclick="askAboutIsmet()" 
+                    class="w-full text-left text-xs bg-gray-800 hover:bg-gray-700 p-2 rounded">
+                    💼 Ask about Ismet
+                </button>
+            </div>
+
+            <!-- Messages -->
+            <div id="chat-messages" class="h-80 overflow-y-auto p-3 text-sm space-y-2"></div>
+
+            <!-- Input -->
+            <div class="flex border-t border-gray-700">
+                <input 
+                    id="chat-input" 
+                    class="flex-1 p-2 bg-gray-800 text-white outline-none"
+                    placeholder="Ask recruiter question..."
+                />
+                <button onclick="sendMessage()" class="px-4 bg-indigo-600 hover:bg-indigo-500">
+                    Send
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+    function toggleChat(){
+        const chat = document.getElementById("chatbot-window");
+        chat.classList.toggle("hidden");
+    }
+
+    function askAboutIsmet(){
+        const preset = "Create a recruiter evaluation for Ismet Ozer based on his experience";
+        document.getElementById("chat-input").value = preset;
+        sendMessage();
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById("chat-input");
+        const messages = document.getElementById("chat-messages");
+
+        const userText = input.value;
+        if (!userText) return;
+
+        messages.innerHTML += `<div class="text-right text-indigo-300">${userText}</div>`;
+        input.value = "";
+
+        const aiResponse = await generateEvaluation(userText);
+
+        messages.innerHTML += `<div class="text-left text-gray-300">${aiResponse}</div>`;
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    async function generateEvaluation(query){
+        return `
+        <strong>Recruiter Evaluation — Ismet Ozer</strong><br><br>
+        Criteria:<br>
+        • Strategy & Consulting Experience (1-5)<br>
+        • Data & Analytics Capability (1-5)<br>
+        • Leadership & Teamwork (1-5)<br>
+        • Communication Skills (1-5)<br>
+        • Cultural Adaptability (1-5)<br><br>
+        Summary:<br>
+        Strong cross-functional strategist with consulting and analytics background.<br><br>
+        Recommendation:<br>
+        Strong Hire / Hire / No Hire
+        `;
+    }
+    </script>
+
+    <!-- =============================== -->
+    <!-- AI CHATBOT END -->
+    <!-- =============================== -->
+
 </body>
 </html>
+
